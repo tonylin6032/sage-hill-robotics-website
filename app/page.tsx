@@ -6,6 +6,16 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
 });
+// app/page.tsx
+import ContentLayout from "./components/ContentLayout";
+
+const homeContent = [
+  {
+    title: "Our Team",
+    subtitle: "Sage Hill Robotics — FRC 5835",
+    description: `Founded in 2016, Sage Hill Robotics brings together students with a passion for engineering, coding, and teamwork...`,
+  },
+];
 
 
 export default function Home() {
@@ -33,6 +43,7 @@ export default function Home() {
             </h1>
         </div>
       </section>
+      <ContentLayout content={homeContent} />
     </main>
   );
 }
