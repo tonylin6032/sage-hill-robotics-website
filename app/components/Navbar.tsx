@@ -1,20 +1,25 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import logo from "@/public/sageroboticslogo.png";
 import Link from "next/link";
 
 export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [lastY, setLastY] = useState(0);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-      if (y > lastY && y > 80) setHidden(true); // scrolling down
-      else setHidden(false); // scrolling up
+
+      // hide/show on scroll
+      if (y > lastY && y > 220) setHidden(true);
+      else setHidden(false);
       setLastY(y);
+
+      // when to trigger gradient
+      if (y > 80) setScrolled(true);
+      else setScrolled(false);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -24,24 +29,28 @@ export default function Navbar() {
   return (
     <div
       className={[
-        "w-full sticky top-0 z-50 bg-emerald-900",
+        "w-full sticky top-0 z-50",
         "transition-all duration-500 ease-in-out will-change-transform",
-        hidden
-          ? "-translate-y-10 opacity-0"
-          : "translate-y-0 opacity-100",
+        hidden ? "-translate-y-10 opacity-0" : "translate-y-0 opacity-100",
       ].join(" ")}
     >
-      <div className="px-2 h-22  flex items-center">
-        <Image src={logo} alt="Sage Robotics Logo" className="h-14 w-14"/>
-        <Link href="/" className="text-lg font-semibold text-white">
-          Sage Hill Robotics
-        </Link>
+      {/* gradient background as a fading layer */}
+      <div
+        className={[
+          "absolute inset-0 transition-opacity duration-700 ease-in-out",
+          scrolled
+            ? "opacity-100 bg-gradient-to-b from-sage-dark to-black"
+            : "opacity-0",
+        ].join(" ")}
+      ></div>
 
-        <nav className="flex gap-6 text-sm">
-          <Link href="/about" className="text-white hover:opacity-80">
+      {/* navbar content sits above gradient */}
+      <div className="relative px-2 h-16 flex items-center">
+        <nav className="flex gap-5 mx-22 text-sm">
+          <Link href="/about" className="text-2xl font-bold text-white hover:opacity-80">
             About
           </Link>
-          <Link href="/outreach" className="text-white hover:opacity-80">
+          <Link href="/outreach" className="text-2xl font-bold text-white hover:opacity-80">
             Outreach
           </Link>
         </nav>
