@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
+
 export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [lastY, setLastY] = useState(0);
@@ -12,14 +13,11 @@ export default function Navbar() {
     const onScroll = () => {
       const y = window.scrollY;
 
-      // hide/show on scroll
       if (y > lastY && y > 220) setHidden(true);
       else setHidden(false);
       setLastY(y);
 
-      // when to trigger gradient
-      if (y > 80) setScrolled(true);
-      else setScrolled(false);
+      setScrolled(y > 80);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -34,7 +32,7 @@ export default function Navbar() {
         hidden ? "-translate-y-10 opacity-0" : "translate-y-0 opacity-100",
       ].join(" ")}
     >
-      {/* gradient background as a fading layer */}
+      {/* fading background layer on scroll */}
       <div
         className={[
           "absolute inset-0 transition-opacity duration-700 ease-in-out",
@@ -42,15 +40,15 @@ export default function Navbar() {
             ? "opacity-100 bg-gradient-to-b from-sage-dark to-black"
             : "opacity-0",
         ].join(" ")}
-      ></div>
+      />
 
-      {/* navbar content sits above gradient */}
-      <div className="relative px-2 h-16 flex items-center">
+      {/* content above background */}
+      <div className="relative z-10 px-2 h-16 flex items-center">
         <nav className="flex gap-5 mx-22 text-sm">
-          <Link href="/about" className="text-2xl font-bold text-white hover:opacity-80">
+          <Link href="/about" className="text-2xl font-bold hover:text-sage-light">
             About
           </Link>
-          <Link href="/outreach" className="text-2xl font-bold text-white hover:opacity-80">
+          <Link href="/outreach" className="text-2xl font-bold hover:text-sage-light">
             Outreach
           </Link>
         </nav>
