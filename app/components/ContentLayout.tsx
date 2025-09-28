@@ -16,9 +16,9 @@ interface ContentProps {
 
 export default function ContentLayout({ content }: ContentProps) {
   return (
-    <div className="space-y-12 md:space-y-16 mt-12">
+    <div className="space-y-12 md:space-y-16 mt-1">
       {content.map((item, index) => (
-        <div key={index} className="max-w-screen-xl mx-auto px-6 sm:px-0">
+        <div key={index} className="max-w-screen-xl mx-auto px-6 sm:px-0 mt-5">
           {item.title && (
             <h1
               className={`${item.titleSize || "text-3xl sm:text-4xl"} font-semibold tracking-tighter ${
@@ -29,7 +29,7 @@ export default function ContentLayout({ content }: ContentProps) {
             </h1>
           )}
           {item.subtitle && (
-            <h2 className="text-2xl sm:text-3xl font-medium tracking-tight mb-6">
+            <h2 className="text-xl sm:text-xl font-medium tracking-tight mb-2">
               {item.subtitle}
             </h2>
           )}

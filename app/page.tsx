@@ -9,11 +9,22 @@ const montserrat = Montserrat({
 // app/page.tsx
 import ContentLayout from "./components/ContentLayout";
 
-const homeContent = [
+const ourteam = [
   {
     title: "Our Team",
+    titleColor: "text-sage-light ",
     subtitle: "Sage Hill Robotics — FRC 5835",
     description: `Founded in 2016, Sage Hill Robotics brings together students with a passion for engineering, coding, and teamwork...`,
+  },
+];
+const aboutfirst = [
+  {
+    title: "About First",
+    titleColor: "text-blue-500 ",
+    subtitle: "First Robotics Competitions",
+    description: `blah
+    blah
+    blah`,
   },
 ];
 
@@ -43,7 +54,8 @@ export default function Home() {
             </h1>
         </div>
       </section>
-      <ContentLayout content={homeContent} />
+      <ContentLayout content={ourteam} />
+      <ContentLayout content={aboutfirst} />
     </main>
   );
 }
