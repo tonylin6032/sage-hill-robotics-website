@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { Montserrat } from "next/font/google";
 
-import StickyLayout, { type ContentItem } from "./components/StickyLayout";
+import StickyLayout, { type ContentItem, type StackedGroup } from "./components/StickyLayout";
 import NormalLayout from "./components/NormalLayout";
 
 import d1 from "@/public/about1.jpg";
@@ -54,7 +54,7 @@ const robot2025: ContentItem[] = [
           { src: r2, caption: "'Tovi' Our 2025 Robot", size: "half", aspect: "1/1" },
           { src: r3, caption: "Tovi Displaying Ground Intake", size: "half", aspect: "1/1" },
         ],
-      } as any,
+      } as StackedGroup,
     ],
   },
 ];
@@ -68,7 +68,6 @@ const mission: ContentItem[] = [
       "Our mission at Sage Hill Robotics is to empower students to explore engineering, programming, and design through hands-on robotics. We strive to foster collaboration, creativity, and problem-solving while competing at the highest level of FIRST Robotics. Above all, we aim to inspire a passion for innovation that extends beyond our team and into the wider community.",
   },
 ];
-
 const aboutfirst: ContentItem[] = [
   {
     title: "About FIRST®",
