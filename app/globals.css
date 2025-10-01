@@ -12,6 +12,7 @@
   --font-mono: var(--font-geist-mono);
   --color-sage-light: #174F00;
   --color-sage-dark: #0B2B00;
+  --color-sage-sigma: #00703A;
 }
 
 @media (prefers-color-scheme: dark) {

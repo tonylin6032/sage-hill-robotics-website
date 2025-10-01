@@ -1,4 +1,4 @@
-import ContentLayout from "@/app/components/ContentLayout";
+import ContentLayout from "@/app/components/StickyLayout";
 
 
 const outreachinfo = [

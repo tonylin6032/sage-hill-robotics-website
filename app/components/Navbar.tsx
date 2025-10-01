@@ -45,6 +45,9 @@ export default function Navbar() {
       {/* content above background */}
       <div className="relative z-10 px-2 h-16 flex items-center">
         <nav className="flex gap-5 mx-22 text-sm">
+          <Link href="/" className="text-2xl font-bold hover:text-sage-light">
+            Home
+          </Link>
           <Link href="/about" className="text-2xl font-bold hover:text-sage-light">
             About
           </Link>
