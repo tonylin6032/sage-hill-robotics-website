@@ -63,7 +63,7 @@ function normalizeSrc(src: ImgLike | null | undefined): ImgLike | null {
 
 export default function StickyLayout({ content }: ContentProps) {
   return (
-    <div className="space-y-14 md:space-y-16 lg:space-y-10 mt-24">
+    <div className="space-y-14 md:space-y-16 lg:space-y-10 mb-12 mx-12">
       {content.map((item, index) => {
         const imageOnLeft = item.imageSide === "left";
         const stickyTop = item.stickyOffsetClass || "top-20";

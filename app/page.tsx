@@ -39,10 +39,10 @@ const ourteam: ContentItem[] = [
 
 const robot2025: ContentItem[] = [
   {
-    title: "Our 2025 Robot",
-    subtitle: "Tovi, From Newport Beach California",
+    title: "Hungry Hippo",
+    subtitle: "Our 2025 Robot",
     description:
-      "Tovi is Sage Hill Robotics’ competition robot, designed and built by students to take on the challenges of the 2025 FIRST Robotics Competition. From precision programming to custom-built mechanisms, Tovi represents months of teamwork, testing, and creativity. It’s the centerpiece of our season and the product of our team’s dedication to engineering and innovation.",
+      "Hungry Hippo is Sage Hill Robotics’ competition robot, designed and built by students to take on the challenges of the 2025 FIRST Robotics Competition. From precision programming to custom-built mechanisms, Hungry Hippo represents months of teamwork, testing, and creativity. It’s the centerpiece of our season and the product of our team’s dedication to engineering and innovation.",
     titleColor: "text-sage-sigma",
     imageSide: "right",
     stickyOffsetClass: "top-16",
@@ -51,8 +51,8 @@ const robot2025: ContentItem[] = [
       {
         layout: "stack",
         children: [
-          { src: r2, caption: "'Tovi' Our 2025 Robot", size: "half", aspect: "1/1" },
-          { src: r3, caption: "Tovi Displaying Ground Intake", size: "half", aspect: "1/1" },
+          { src: r2, caption: "'Hungry Hippo' Our 2025 Robot", size: "half", aspect: "1/1" },
+          { src: r3, caption: "Hungry Hippoi Displaying Ground Intake", size: "half", aspect: "1/1" },
         ],
       } as StackedGroup,
     ],

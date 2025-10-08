@@ -1,5 +1,5 @@
 import ContentLayout from "@/app/components/StickyLayout";
-
+import ContactForm from "../components/ContactCard";
 
 const outreachinfo = [
     {
@@ -14,6 +14,7 @@ export default function Outreach(){
     return (
         <div>
             <ContentLayout content = {outreachinfo}/>
+            <ContactForm />
         </div>
     )
 }
