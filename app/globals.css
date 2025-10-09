@@ -14,6 +14,8 @@
   --color-sage-dark: #0B2B00;
   --color-sage-sigma: #00703A;
   --color-sage-ultralight: #005F1A;
+  --color-sage-ultradark: #0b2101;
+  --color-yei-blue: #4061bd;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -12,6 +12,7 @@ import d3 from "@/public/about3.jpg";
 import r1 from "@/public/2025rob1.jpg";
 import r2 from "@/public/2025rob2.jpg";
 import r3 from "@/public/2025rob3.jpg";
+import ContactForm from "./components/ContactCard";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,7 +27,7 @@ const ourteam: ContentItem[] = [
     subtitle: "FRC 5835, Newport Beach California",
     description:
       "Sage Hill Robotics is the competitive robotics team at Sage Hill School. Our students work together to design, build, and program robots for the annual FIRST Robotics Competition. The team includes subgroups focused on mechanical design, programming, electronics, and outreach, giving members hands-on experience in all parts of robotics.",
-    titleColor: "text-sage-light",
+      titleColor: "text-sage-sigma",
     imageSide: "right",
     stickyOffsetClass: "top-16",
     images: [
@@ -62,7 +63,7 @@ const robot2025: ContentItem[] = [
 const mission: ContentItem[] = [
   {
     title: "Our Mission",
-    titleColor: "text-sage-light",
+    titleColor: "text-sage-sigma",
     subtitle: "Building robots, skills, and community at Sage Hill.",
     description:
       "Our mission at Sage Hill Robotics is to empower students to explore engineering, programming, and design through hands-on robotics. We strive to foster collaboration, creativity, and problem-solving while competing at the highest level of FIRST Robotics. Above all, we aim to inspire a passion for innovation that extends beyond our team and into the wider community.",
@@ -139,6 +140,7 @@ export default function Home() {
       <NormalLayout content={mission} />
       <StickyLayout content={robot2025} />
       <NormalLayout content={aboutfirst} />
+      <ContactForm />
     </main>
   );
 }

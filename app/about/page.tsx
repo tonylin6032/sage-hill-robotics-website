@@ -13,7 +13,7 @@ const ourteam: ContentItem[] = [
     subtitle: "FRC 5835, Newport Beach California",
     description:
       "Sage Hill Robotics is the competitive robotics team at Sage Hill School. Our students work together to design, build, and program robots for the annual FIRST Robotics Competition. Our team is composed of students at Sage Hill School passionate about STEM.The team includes subgroups focused on mechanical design, programming, electronics, and outreach, giving members hands-on experience in all parts of robotics.",
-    titleColor: "text-sage-light",
+      titleColor: "text-sage-sigma",
   },
 ];
 const mechanical: ContentItem[] = [
