@@ -6,15 +6,12 @@ import Link from "next/link";
 export default function Navbar() {
   const [hidden, setHidden] = useState(false);
   const [lastY, setLastY] = useState(0);
-  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     const onScroll = () => {
       const y = window.scrollY;
-
       setHidden(y > lastY && y > 220);
       setLastY(y);
-      setScrolled(y > 80);
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
@@ -24,42 +21,25 @@ export default function Navbar() {
   return (
     <header
       className={[
-        "sticky top-0 inset-x-0 z-50 w-full",
+        // 🔽 MOVED DOWN MORE ON MOBILE: top-28 (112px). Desktop stays top-0.
+        "sticky top-28 sm:top-0 inset-x-0 z-50 w-full",
         "transition-all duration-500 ease-in-out will-change-transform",
         hidden ? "-translate-y-12 opacity-0" : "translate-y-0 opacity-100",
       ].join(" ")}
     >
-      {/* Background is ALWAYS on (so mobile never looks white),
-          becomes stronger gradient after scrolling */}
-      <div
-        className={[
-          "pointer-events-none absolute inset-0 transition-all duration-700 ease-in-out",
-          scrolled
-            ? "opacity-100 bg-gradient-to-b from-sage-dark to-black"
-            : "opacity-100 bg-black/60 backdrop-blur",
-        ].join(" ")}
-      />
+      {/* ✅ solid black background */}
+      <div className="pointer-events-none absolute inset-0 bg-black" />
 
-      {/* content above background */}
       <div className="relative z-10 h-14 sm:h-16">
         <div className="mx-auto flex h-full max-w-screen-2xl items-center pl-6 sm:pl-24 pr-4 sm:pr-6">
           <nav className="flex w-full items-center justify-start gap-4 sm:gap-6">
-            <Link
-              href="/"
-              className="font-bold hover:text-sage-light text-lg sm:text-2xl"
-            >
+            <Link href="/" className="font-bold hover:text-sage-light text-lg sm:text-2xl">
               Home
             </Link>
-            <Link
-              href="/about"
-              className="font-bold hover:text-sage-light text-lg sm:text-2xl"
-            >
+            <Link href="/about" className="font-bold hover:text-sage-light text-lg sm:text-2xl">
               About
             </Link>
-            <Link
-              href="/outreach"
-              className="font-bold hover:text-sage-light text-lg sm:text-2xl"
-            >
+            <Link href="/outreach" className="font-bold hover:text-sage-light text-lg sm:text-2xl">
               Outreach
             </Link>
           </nav>

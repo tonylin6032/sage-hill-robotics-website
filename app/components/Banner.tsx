@@ -7,7 +7,7 @@ import logo from "@/public/sageroboticslogo.png";
 export default function Banner() {
   return (
     <div className="w-full bg-black ">
-      <div className=" mx-auto h-16 px-6 flex items-center">
+      <div className=" mx-auto mb-2 h-16 px-6 flex items-center">
         {/* Logo + text to the left, same size/height as Navbar */}
         <Link href="/" className="flex items-center gap-3 mt-3">
           <Image
