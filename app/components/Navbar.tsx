@@ -22,7 +22,7 @@ export default function Navbar() {
     <header
       className={[
         // 🔽 MOVED DOWN MORE ON MOBILE: top-28 (112px). Desktop stays top-0.
-        "sticky top-28 sm:top-0 inset-x-0 z-50 w-full",
+        "sticky inset-x-0 z-50 w-full",
         "transition-all duration-500 ease-in-out will-change-transform",
         hidden ? "-translate-y-12 opacity-0" : "translate-y-0 opacity-100",
       ].join(" ")}
