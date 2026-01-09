@@ -53,7 +53,7 @@ const robot2025: ContentItem[] = [
         layout: "stack",
         children: [
           { src: r2, caption: "'Hungry Hippo' Our 2025 Robot", size: "half", aspect: "1/1" },
-          { src: r3, caption: "Hungry Hippoi Displaying Ground Intake", size: "half", aspect: "1/1" },
+          { src: r3, caption: "Hungry Hippo Displaying Ground Intake", size: "half", aspect: "1/1" },
         ],
       }satisfies StackedGroup,
     ],
